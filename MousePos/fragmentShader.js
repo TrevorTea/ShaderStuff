@@ -7,12 +7,12 @@ uniform vec2 u_mouse;
 uniform vec2 u_resolution;
 
 vec4 mouse2Color() {
-    float normMouseX = u_mouse[0] / u_resolution[0];
-    float normMouseY = u_mouse[1] / u_resolution[1];
+    vec2 normMouse = u_mouse / u_resolution;
     
-    return vec4(normMouseX, normMouseY, 0.0, 1.0);
+    return vec4(normMouse, 0.0 , 1.0);
 }
 
 void main() {
+	// gl_FragColor = vec4(abs(sin(u_time)),0.0,0.0,1.0);
     gl_FragColor = mouse2Color();
 }
