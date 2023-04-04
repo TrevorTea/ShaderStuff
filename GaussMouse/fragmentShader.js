@@ -17,7 +17,6 @@ float timeOff(float offset) {
 }
 
 void main() {
-	vec2 st = gl_FragCoord.xy/u_resolution;
     vec3 rgb = vec3(timeOff(0.0), timeOff(1.0), timeOff(2.0)) * gaussMouse() * (sin(u_time * 2.0) + 1.0);
 	gl_FragColor = vec4(rgb,1.0);
 }
